@@ -8,7 +8,7 @@
     z-index: 100; /* Behind the navbar */
     padding: 48px 0 0; /* Height of navbar */
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-    
+    float: left;
   }
   
   @media (max-width: 767.98px) {
@@ -59,22 +59,34 @@
 
   /* STYLING FOR FORECAST DIV */
   #cityInfo {  
-    width: 100%;
+    width: 85%;
     height: auto;
-    clear: both;
-    border: 1px solid black;
+    overflow: hidden;
+    border: 1px solid rgb(207, 204, 204);
     padding: 55px;
-    margin: auto;
     margin-top: 20px; 
     float: right;
   }
 
-  #forecast {
-    width: 75%;
+  #forecastDiv {
+    width: 80%;
     height: auto;
-    margin: auto;
     padding-top: 30px;
     float: right;
+  }
+
+  #cityName {
+    font-size: 30px;
+  }
+
+  #forecast {
+  background-image: linear-gradient(blue, rgb(28, 28, 247));
+  color: white;
+  }
+
+  .forecastImg {
+    width: 60px;
+    height: auto;
   }
   
   

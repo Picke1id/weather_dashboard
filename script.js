@@ -8,12 +8,14 @@ $(document).ready(function(){
             method: "GET",
         }).then(function (response){
 
-            $("#cityName").text(response.name);
+            // METHOD FOR CURRENT DAY WEATHER 
+            $("#cityName").html(response.name + " (" + moment.unix(response.dt).format('L') + ")");
+            $("img#icon").attr("src", `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`);
             $("#temp").html("Temperature: " + response.main.temp.toFixed(1) + " <span>&#8457;</span>");
             $("#humidity").text(`Humidity: ${response.main.humidity}%`);
             $("#wind").text(`Wind Speed: ${response.wind.speed} MPH`);
             
-            // METHOD FOR RETRIEVING UV INDEX
+            // METHOD FOR RETRIEVING UV INDEX & 5 DAY FORECAST
             let lat = response.coord.lat;
             let lon = response.coord.lon;
             $.ajax({
@@ -22,8 +24,18 @@ $(document).ready(function(){
                 success: function(response){
                     let uvIndex = response.current.uvi;
                     let uviColor = changeUviColor(uvIndex);
-                    $("#uv").text(response.current.uvi)
+                    $("#uv").text(response.current.uvi);
                     $("#uv").attr('style', `background-color: ${uviColor}; color: ${uviColor === "yellow" ? "black" : "white"}`);
+            
+
+                    let dailyForecast = response.daily;
+                    for (i = 0; i <= 5; i++) {
+                        let forecastDay = dailyForecast[i];
+                        $(`div.day${i} .date`).text(moment.unix(forecastDay.dt).format('L'));
+                        $(`div.day${i} .forecastImg`).attr("src", `https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}.png`);
+                        $(`div.day${i} .forecastTemp`).html(`Temp: ${forecastDay.temp.day.toFixed(1)} <span>&#8457;</span>`);
+                        $(`div.day${i} .forecastHumidity`).text(`Humidity: ${forecastDay.humidity}%`);
+                    }
                 }
             });  
         });    

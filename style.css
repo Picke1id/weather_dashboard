@@ -82,6 +82,7 @@
     height: auto;
     padding-top: 30px;
     float: right;
+    font-size: 25px;
   }
 
   #cityName {
@@ -91,6 +92,7 @@
   #forecast {
   background-image: linear-gradient(blue, rgb(28, 28, 247));
   color: white;
+  font-size: 15px;
   }
 
   .forecastImg {

@@ -14,7 +14,7 @@ The motivation behind this project was to create a weather dashboard that uses a
 ## Code Example
 Here is an example of the planner layout:
 
-![Weather Demo]()
+![Weather Demo](./Images/weatherDemo.png)
 
 ## Features
 * Ability to search city and retrieve current weather, as well as 5-day forecast.

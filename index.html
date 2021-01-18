@@ -17,52 +17,28 @@
         <header>
             <!-- NAVBAR -->
             <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-3 shadow">
-                <a id="dashboard" class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="index.html">Weather Dashboard</a>
+                <a id="dashboard" class="navbar-brand col-md-5 col-lg-3 mr-0 px-3" href="index.html">Weather Dashboard</a>
                 <button class="navbar-toggler position-relative d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <input id="userInput" class="form-control form-control-dark mt-2 w-75" type="search" placeholder="Search City Here" aria-label="Search">
-                <button id="searchBtn" type="button" class="btn btn-primary mt-2 mx-0 px-3"> Search </button>
+                <button id="searchBtn" type="button" class="btn btn-primary mt-2 mx-2 px-3"> Search </button>
             </nav>
         </header>
 
         <main>
-            <!-- SIDEBAR -->
+            <!-- SIDEBAR FOR SEARCH HISTORY-->
             <div class="container-fluid">
                 <div class="row">
-                    <nav id="sidebarMenu" class="col-xs-2 col-md-5 col-lg-2 d-lg-block bg-light sidebar collapse">
+                    <nav id="sidebarMenu" class="col-md-5 col-lg-2 d-lg-block bg-light sidebar collapse">
                         <div class="sidebar-sticky pt-3">
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    <a id="history" class="nav-link active mt-3" href="index.html">
+                                    <a id="history" class="nav-link active mt-3">
                                         Search History 
                                     </a>
                                 </li>
-                                <li class="list-group-item">
-                                    <a class="nav-link" href="">
-                        
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="nav-link" href="">
-                     
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="nav-link" href="">
-                       
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="nav-link" href="">
-      
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="nav-link" href="">
-                
-                                    </a>
-                                </li>
+                                <!-- SEARCHED CITIES WILL APPEAR HERE -->
                             </ul>
                         </div>
                     </nav>
@@ -83,7 +59,7 @@
             </div>
 
             <!-- FORECAST INFO -->
-            <div id="forecastDiv"> 5-Day Forecast
+            <div id="forecastDiv"> 5-Day Forecast:
                 <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-5 g-4">
                     <div class="col cols-1 row-cols-md-1">
                         <div id="forecast" class="card h-100 p-3 day1">
@@ -127,12 +103,7 @@
                     </div>
                 </div>
             </div>
-
         </main>
-
-        <footer>
-
-        </footer>
         
         <!-- JQUERY CDN LINK-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
